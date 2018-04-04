@@ -8,7 +8,7 @@ import { MaterialImportsModule } from './material-imports/material-imports.modul
 import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './user/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, ControlContainer, FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -27,6 +27,7 @@ import { RegisterComponent } from './user/register/register.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialImportsModule,
+    FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

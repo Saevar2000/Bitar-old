@@ -1,24 +1,26 @@
 <div align="center">
   <mat-card class="main-card">
-    <mat-card-title>Nýskráning</mat-card-title>
-    <mat-card-content>
-      <mat-form-field class="field">
-        <input matInput [formControl]="emailControl" type="email" placeholder="Netfang" required>
-        <mat-error *ngIf="emailControl.hasError('required')">
-          Þú getur ekki stofnað aðgang án netfangs.
-        </mat-error>
-      </mat-form-field>
-      <mat-form-field class="field">
-        <input matInput [formControl]="passwordControl" type="password" placeholder="Lykilorð" required>
-        <mat-error *ngIf="passwordControl.hasError('required')">
-          Þú getur ekki stofnað aðgang án lykilorðs.
-        </mat-error>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
-      <span class="spacer"></span>
-      <button mat-button [disabled]="(emailControl.invalid || passwordControl.invalid) || authService.user" (click)="register()">Nýskrá</button>
-    </mat-card-actions>
+    <form>
+      <mat-card-title>Nýskráning</mat-card-title>
+      <mat-card-content>
+        <mat-form-field class="field">
+          <input matInput [formControl]="emailControl" type="email" placeholder="Netfang" required>
+          <mat-error *ngIf="emailControl.hasError('required')">
+            Þú getur ekki stofnað aðgang án netfangs.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="field">
+          <input matInput [formControl]="passwordControl" type="password" placeholder="Lykilorð" required>
+          <mat-error *ngIf="passwordControl.hasError('required')">
+            Þú getur ekki stofnað aðgang án lykilorðs.
+          </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <span class="spacer"></span>
+        <button mat-button [disabled]="(emailControl.invalid || passwordControl.invalid) || authService.user" (click)="register()">Nýskrá</button>
+      </mat-card-actions>
+    </form>
   </mat-card>
   <mat-card *ngIf="result" class="result-card" [@growDown]>
     <mat-card-content>
