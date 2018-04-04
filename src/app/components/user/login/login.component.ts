@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
-import { growDown } from '../../../animations';
+import { AuthService } from '../../../services/auth.service';
+import { growDown } from '../../../../animations';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
   animations: [growDown]
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
+
+  hide = true;
 
   emailControl: FormControl;
   passwordControl: FormControl;
@@ -27,7 +29,7 @@ export class RegisterComponent implements OnInit {
     this.passwordControl = new FormControl('', Validators.required);
   }
 
-  register(): void {
+  login(): void {
     if (this.emailControl.invalid || this.passwordControl.invalid) {
       return;
     }
@@ -35,14 +37,14 @@ export class RegisterComponent implements OnInit {
       color: 'gray',
       icon: null,
       title: 'Bíddu aðeins',
-      message: 'Stofna aðgang...'
+      message: 'Innskrái þig...'
     };
-    this.authService.register(this.emailControl.value, this.passwordControl.value).then((user) => {
+    this.authService.login(this.emailControl.value, this.passwordControl.value).then((user) => {
       this.result = {
         color: 'green',
         icon: 'done',
         title: 'OK.',
-        message: ('Velkomin(s), ' + (user.displayName || user.email))
+        message: ('Velkomin(n), ' + (user.displayName || user.email))
       };
       this.removeResult();
     }).catch((error) => {
