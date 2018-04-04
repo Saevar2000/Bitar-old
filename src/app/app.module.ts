@@ -5,11 +5,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MaterialImportsModule } from './material-imports/material-imports.module';
+import { ToolbarComponent } from './navigation/toolbar/toolbar.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
