@@ -11,6 +11,8 @@ import { growDown } from '../../../animations';
 })
 export class LoginComponent implements OnInit {
 
+  hide = true;
+
   emailControl: FormControl;
   passwordControl: FormControl;
   result: {
@@ -42,7 +44,7 @@ export class LoginComponent implements OnInit {
         color: 'green',
         icon: 'done',
         title: 'OK.',
-        message: ('Velkomin, ' + (user.displayName || user.email))
+        message: ('Velkomin(n), ' + (user.displayName || user.email))
       };
       this.removeResult();
     }).catch((error) => {

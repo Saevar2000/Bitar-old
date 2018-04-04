@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
         color: 'green',
         icon: 'done',
         title: 'OK.',
-        message: ('Velkomin, ' + (user.displayName || user.email))
+        message: ('Velkomin(s), ' + (user.displayName || user.email))
       };
       this.removeResult();
     }).catch((error) => {
