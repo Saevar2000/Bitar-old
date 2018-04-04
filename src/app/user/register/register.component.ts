@@ -4,12 +4,12 @@ import { AuthService } from '../../services/auth.service';
 import { growDown } from '../../../animations';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss'],
   animations: [growDown]
 })
-export class LoginComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   emailControl: FormControl;
   passwordControl: FormControl;
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.passwordControl = new FormControl('', Validators.required);
   }
 
-  login(): void {
+  register(): void {
     if (this.emailControl.invalid || this.passwordControl.invalid) {
       return;
     }
@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
       color: 'gray',
       icon: null,
       title: 'Bíddu aðeins',
-      message: 'Innskrái þig...'
+      message: 'Stofna aðgang...'
     };
-    this.authService.login(this.emailControl.value, this.passwordControl.value).then((user) => {
+    this.authService.register(this.emailControl.value, this.passwordControl.value).then((user) => {
       this.result = {
         color: 'green',
         icon: 'done',

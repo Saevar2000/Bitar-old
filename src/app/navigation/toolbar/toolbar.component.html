@@ -4,13 +4,22 @@
   <!-- This fills the remaining space of the current row -->
   <span class="spacer"></span>
 
+  <p>{{authService.user?.email}}&nbsp;</p>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item routerLink="login">
-      <mat-icon>account_circle</mat-icon>
+      <mat-icon>fingerprint</mat-icon>
       <span>Innskráning</span>
+    </button>
+    <button mat-menu-item routerLink="register">
+      <mat-icon>lock_open</mat-icon>
+      <span>Nýskráning</span>
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Útskrá</span>
     </button>
   </mat-menu>
 
