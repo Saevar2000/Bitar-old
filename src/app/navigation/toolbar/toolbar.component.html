@@ -9,15 +9,15 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="login">
+    <button mat-menu-item *ngIf="!authService.user" routerLink="login">
       <mat-icon>fingerprint</mat-icon>
       <span>Innskráning</span>
     </button>
-    <button mat-menu-item routerLink="register">
+    <button mat-menu-item *ngIf="!authService.user" routerLink="register">
       <mat-icon>lock_open</mat-icon>
       <span>Nýskráning</span>
     </button>
-    <button mat-menu-item (click)="logout()">
+    <button mat-menu-item *ngIf="authService.user" (click)="logout()">
       <mat-icon>exit_to_app</mat-icon>
       <span>Útskrá</span>
     </button>
