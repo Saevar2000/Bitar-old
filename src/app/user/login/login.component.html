@@ -1,0 +1,33 @@
+<div align="center">
+  <mat-card class="main-card">
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <mat-form-field class="field">
+        <input matInput [formControl]="emailControl" type="email" placeholder="Email" required>
+        <mat-error *ngIf="emailControl.hasError('required')">
+          You can't login without an email.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="field">
+        <input matInput [formControl]="passwordControl" type="password" placeholder="Password" required>
+        <mat-error *ngIf="passwordControl.hasError('required')">
+          You can't login without a password.
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <span class="spacer"></span>
+      <button mat-button [disabled]="(emailControl.invalid || passwordControl.invalid) || authService.user" (click)="login()">LOG IN</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card *ngIf="result" class="result-card" [@growDown]>
+    <mat-card-content>
+      <mat-icon class="icon" [style.color]="result.color" *ngIf="result.icon">{{result.icon}}</mat-icon>
+      <mat-spinner class="spinner" color="primary" diameter="40" *ngIf="!result.icon"></mat-spinner>
+      <span class="message-container">
+        <p class="title">{{result.title}}</p>
+        <p>{{result.message}}</p>
+      </span>
+    </mat-card-content>
+  </mat-card>
+</div>

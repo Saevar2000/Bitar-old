@@ -1,0 +1,52 @@
+.main-card {
+    @extend .card-base;
+    .mat-card-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        .field {
+            width: 100%;
+            margin: 4px;
+        }
+    }
+    .mat-card-actions {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.result-card {
+    @extend .card-base;
+    .mat-card-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .icon {
+            height: 40px;
+            width: 40px;
+            font-size: 40px;
+            margin: 4px;
+        }
+        .spinner {
+            margin: 4px;
+        }
+        .message-container {
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            p {
+                margin: 4px;
+            }
+            .title {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.card-base {
+    margin: 8px;
+    max-width: 350px;
+    width: 100%;
+    overflow: hidden;
+}
