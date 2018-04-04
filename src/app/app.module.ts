@@ -6,14 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MaterialImportsModule } from './material-imports/material-imports.module';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './user/login/login.component';
 import { ReactiveFormsModule, ControlContainer, FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './services/auth.service';
-import { RegisterComponent } from './user/register/register.component';
 import { ToolbarComponent } from './components/navigation/toolbar/toolbar.component';
+import { RegisterComponent } from './components/user/register/register.component';
+import { LoginComponent } from './components/user/login/login.component';
 
 
 @NgModule({
