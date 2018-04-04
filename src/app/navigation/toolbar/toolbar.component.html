@@ -1,1 +1,17 @@
-<mat-toolbar>Toolbar test</mat-toolbar>
+<mat-toolbar color="primary">
+  <span>Bitar</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="spacer"></span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>Innskráning</span>
+    </button>
+  </mat-menu>
+
+</mat-toolbar>
