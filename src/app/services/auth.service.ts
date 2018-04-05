@@ -19,7 +19,7 @@ export class AuthService {
     });
   }
 
-  login(email: string, password: string) : Promise<User | null> {
+  login(email: string, password: string): Promise<User | null> {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password);
   }
 
