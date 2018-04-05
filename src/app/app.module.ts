@@ -14,6 +14,7 @@ import { AuthService } from './services/auth.service';
 import { ToolbarComponent } from './components/navigation/toolbar/toolbar.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { LoginComponent } from './components/user/login/login.component';
     AppComponent,
     ToolbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
