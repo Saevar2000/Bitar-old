@@ -27,6 +27,15 @@ export class AuthService {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
   }
 
+  verifyEmail(email: string): Promise<void> {
+    const actionCodeSettings = {
+      url: 'https://bitar.is',
+      handleCodeInApp: true
+    };
+    
+    return this.afAuth.auth.sendSignInLinkToEmail(email, actionCodeSettings);
+  }
+
   logout(): Promise<any> {
     return this.afAuth.auth.signOut();
   }
