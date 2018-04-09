@@ -20,3 +20,25 @@ $bitar-theme: mat-light-theme($bitar-primary, $bitar-accent, $bitar-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($bitar-theme);
+
+.bcontainer {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .bcontainer {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .bcontainer {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .bcontainer {
+      width: 1170px;
+    }
+  }

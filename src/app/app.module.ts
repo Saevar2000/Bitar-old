@@ -15,6 +15,7 @@ import { ToolbarComponent } from './components/navigation/toolbar/toolbar.compon
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { BuyComponent } from './components/home/buy/buy.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HomeComponent } from './components/home/home.component';
     ToolbarComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    BuyComponent
   ],
   imports: [
     BrowserModule,

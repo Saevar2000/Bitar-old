@@ -10,7 +10,6 @@ import { growDown } from '../../../../animations';
   animations: [growDown]
 })
 export class LoginComponent implements OnInit {
-
   hide = true;
 
   emailControl: FormControl;

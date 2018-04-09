@@ -10,6 +10,7 @@ import { growDown } from '../../../../animations';
   animations: [growDown]
 })
 export class RegisterComponent implements OnInit {
+  hide = true;
 
   emailControl: FormControl;
   passwordControl: FormControl;

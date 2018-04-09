@@ -1,0 +1,46 @@
+<div class="bcontainer">
+  <br>
+  <mat-toolbar color="primary">
+    <p>Kaupa Bitcoin</p>
+  </mat-toolbar>
+  <mat-card>
+    <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Veldu magn</ng-template>
+          <mat-form-field>
+            <input type="number" matInput placeholder="Magn í ISK" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext class="float-right">Áfram</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Bitcoin Address</ng-template>
+          <mat-form-field>
+            <input matInput placeholder="Address" formControlName="secondCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Til baka</button>
+            <button mat-button matStepperNext class="float-right">Áfram</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Greiða</ng-template>
+        <mat-card-title align="center">Upplýsingar</mat-card-title>
+        <p>Bitcoin Address</p>
+        <p>Bitcoin magn: ~0.01</p>
+        <p>Verð: 10000 ISK</p>
+        <mat-card-subtitle>test</mat-card-subtitle>
+        <div>
+          <button mat-button matStepperPrevious>Til baka</button>
+          <button mat-button class="float-right" (click)="stepper.reset()">Greiða</button>
+          
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card>
+</div>
