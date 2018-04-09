@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       color: 'gray',
       icon: null,
       title: 'Bíddu aðeins',
-      message: 'Innskrái þig...'
+      message: ''
     };
     this.authService.login(this.emailControl.value, this.passwordControl.value).then((user) => {
       this.result = {

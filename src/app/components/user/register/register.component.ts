@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
       color: 'gray',
       icon: null,
       title: 'Bíddu aðeins',
-      message: 'Stofnar aðgang...'
+      message: ''
     };
     this.authService.register(this.emailControl.value, this.passwordControl.value).then((user) => {
       this.result = {
