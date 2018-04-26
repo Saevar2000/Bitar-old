@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { qrcode } from 'qrcode';
+import * as QRCode from 'qrcode';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,16 @@ import { qrcode } from 'qrcode';
 })
 export class HomeComponent implements OnInit {
 
-  makeQR = inv => qrcode.toDataURL(`lightning:${inv.payreq}`.toUpperCase(), { margin: 2, width: 300 })
+  makeQR = inv => QRCode.toDataURL(`lightning:${inv.payreq}`.toUpperCase(), { margin: 2, width: 300 })
 
   constructor() { }
 
   ngOnInit() {
     
+  }
+
+  public getInfo(): void {
+    //QRCode
   }
 
 }
