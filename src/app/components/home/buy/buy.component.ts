@@ -5,7 +5,6 @@ import { LightningService } from '../../../services/lightning.service';
 
 @Component({
   selector: 'app-buy',
-  providers: [ LightningService ],
   templateUrl: './buy.component.html',
   styleUrls: ['./buy.component.scss']
 })
@@ -14,10 +13,7 @@ export class BuyComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
 
-  constructor(
-    private _formBuilder: FormBuilder, 
-    private lightningService: LightningService
-  ) { }
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
     let connection = new HubConnection('https://localhost:5001/pricehub');
@@ -34,10 +30,6 @@ export class BuyComponent implements OnInit {
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
-    });
-
-    this.lightningService.getInfo().subscribe( r => {
-      console.log('tada' + r);
     });
   }
 

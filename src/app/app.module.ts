@@ -17,6 +17,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { BuyComponent } from './components/home/buy/buy.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SellComponent } from './components/home/sell/sell.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    BuyComponent
+    BuyComponent,
+    SellComponent
   ],
   imports: [
     BrowserModule,

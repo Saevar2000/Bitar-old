@@ -1,0 +1,8 @@
+<form>
+  <mat-form-field>
+    <input matInput #box placeholder="Bitcoin magn" (keyup)="OnKey(box.value)">
+  </mat-form-field>
+  <button mat-button (click)="CreateInvoice()">Áfram</button>
+</form>
+
+<img [src]="lightningQR">
