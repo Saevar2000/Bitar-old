@@ -16,7 +16,7 @@ export class BuyComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    let connection = new HubConnection('https://localhost:5001/pricehub');
+    var connection = new HubConnection('https://localhost:5001/pricehub');
 
     connection.on('send', data => {
       console.log(data);
